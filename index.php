@@ -74,7 +74,7 @@
                         </label>
                     </div>
                     <div id="tellus">
-                    
+
                         <textarea name="note">
 
                             </textarea>
@@ -220,21 +220,24 @@
 
         <section class="design">
             <article id="third">
-                <section class="aboutMe">
-                    <?php
-                    echo '<a href="/mysaitPHP/aboutme.php">Как  я стала разработчиком</a>';
-                    ?>
-                </section>
-                <section class="aboutMe">
-                    <?php
-                    echo '<a href="/mysaitPHP/design.php">Дизайн в разработке сайтов</a>';
-                    ?>
-                </section>
-                <section class="aboutMe">
-                    <?php
-                    echo '<a href="/mysaitPHP/websait.php">Разновидности мобильных приложений</a>';
-                    ?>
-                </section>
+                <?php
+                // Подключение базы данных
+                $dbConnect = mysqli_connect("test.loc", "root", "", "altshu_final_project");
+                mysqli_query($dbConnect, "SET NAMES 'utf8'");
+                $queryTitle = "SELECT * FROM news  ";
+                $result = mysqli_query($dbConnect, $queryTitle);
+               
+            
+            
+                while ($section = mysqli_fetch_array($result)) {
+                    echo "<div class='aboutMe'>";
+                    echo '<a href="/mysaitPHP/aboutme' . $section['id'] . '.php">' . $section['title'] . '</a>'; 
+                    echo "<img src=" . $section['image_url'] . ">";                 
+                   
+                    echo "</div>";       
+                }
+              
+                ?>
 
             </article>
         </section>
