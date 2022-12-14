@@ -21,12 +21,13 @@ h3 {
     line-height: 1.5rem;
     color: #6C85AC;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 2vw;
 }
 
 
 .reviews {
     margin-left: 100px;
-    height: 402px;
+    /* height: 402px; */
     width: 30vw;
 
 }
@@ -110,15 +111,15 @@ h3 {
         /* display: flex; */
         flex-direction: column;
         margin-top: 5vh;
-        height: 90vh;
+        height: 80vh;
 
     }
 
     .reviews {
         width: 80vw;
-        height: 30vh;
+        height: 20vh;
         padding-top: 0;
-        margin-left: 2rem;
+        margin-left: 10vw;
         margin-top: 0.1rem;
 
     }
@@ -131,7 +132,7 @@ h3 {
     .skills {
         width: 80vw;
         margin-top: 10vh;
-        margin-left: 2rem;
+        margin-left: 10vw;
     }
 
     h3 {
@@ -183,14 +184,14 @@ h3 {
     .reviews-skills {
         /* display: flex; */
         flex-direction: column;
-        margin-top: 5vh;
+        /* margin-top: 5vh; */
         height: 90vh;
 
     }
 
     .reviews {
         width: 80vw;
-        height: 30vh;
+        /* height: 30vh; */
         padding-top: 10vh;
         margin-left: 10vw;
         margin-top: 0.1rem;
@@ -264,7 +265,6 @@ h3 {
 /* WORKING*/
 .working {
 
-    height: 700px;
     width: 100vw;
     left: 0px;
     /* top: 643px; */
@@ -276,9 +276,10 @@ h3 {
 
 .imgWork {
     margin-top: 50px;
-    width: 800px;
+    width: 50vw;
     border: 1px rgb(158, 172, 158) solid;
     box-shadow: 1px 1px 2px rgb(158, 172, 158) ;
+    margin-bottom: 5vw;
 
 }
 
@@ -351,7 +352,6 @@ h3 {
         padding-right: 1vw;
         width: 90vw;
         margin-bottom: 2vh;
-        height: 60vh;
     }
 
     .imgWork {
@@ -414,7 +414,6 @@ h3 {
         padding-right: 1vw;
         width: 90vw;
         margin-bottom: 2vh;
-        height: 80vh;
     }
 
     .imgWork {
@@ -491,9 +490,8 @@ h3 {
 
 @media screen and (max-width: 600px) {
     .servise {
-        width: 85vw;
+        width: 80vw;
         height: 70vh;
-        padding: 3vw;
         padding-left: 10vw;
         padding-right: 10vw;
     }
@@ -521,9 +519,11 @@ h3 {
 
 @media screen and (min-width: 600px) and (max-width: 1000px) {
     .servise {
-        width: 100vw;
+        width: 90vw;
         height: 70vh;
         padding-top: 5vw;
+        padding-left: 8vw;
+        padding-right: 2vw;
 
     }
 
