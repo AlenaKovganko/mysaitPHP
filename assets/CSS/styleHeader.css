@@ -40,7 +40,7 @@ a {
 
 @media screen and (max-width: 600px) {
     .nav {
-        height: 8vh;
+        height: 9vh;
     }
 
 
@@ -53,7 +53,7 @@ a {
 
 @media screen and (min-width: 600px) and (max-width: 1000px) {
     .nav {
-        height: 8vh;
+        height: 9vh;
     }
 
 
