@@ -7,13 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="favicon.png" rel="icon">
     <link rel="stylesheet" href="./assets/CSS/style.css">
     <link rel="stylesheet" href="./assets/css/styleModal.css">
+    <link rel="stylesheet" href="./assets/CSS/styleHeader.css">
     <style>
 
     </style>
 
-    <title>Document</title>
+    <title>website development </title>
 </head>
 
 <body>
@@ -58,20 +60,26 @@
                     <h1 style="text-align: center"> FEEDBACK </h1>
                     <div>
                         <label>
-                            <input type="text" name="nameUsers" id="feedback" placeholder="  Имя" required />
+                            <input name="first_name" type="text" name="nameUsers" id="feedback" placeholder="  Имя" required />
                         </label>
                     </div>
                     <div>
                         <label>
-                            <input type="email" id="feedback" id="email" placeholder="  email" required name="email" />
+                            <input name="last_name" type="text" name="nameUsers" id="feedback" placeholder="  Фамилия" required />
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input name="email" type="email" id="feedback" id="email" placeholder="  email" required name="email" />
                         </label>
                     </div>
                     <div id="tellus">
-                        <textarea>
+                    
+                        <textarea name="note">
 
                             </textarea>
                     </div>
-                    <button type="submit" > отправить </button>
+                    <button type="submit"> отправить </button>
                     <!-- <input type="submit"  value="Submit">Submit</button> -->
                 </form>
 
@@ -97,26 +105,54 @@
                         return false;
                     };
                     document.addEventListener('submit', function() {
-                        alert('спасибо за отзыв')
+                        alert('Спасибо мы свяжемся с Вами')
                     })
-
-
-                    // btn.addEventListener('click', (e) => {
-                    //     win.style.display = 'none';
-                    //     alert('У тебя все получиться, я в тебя верю!');
-                    // })
-
 
 
                 }
             </script>
-            <!-- <img src="./assets/images/react.png" class="desktop" id="react" alt="react">
-            <img src="./assets/images/mysql.png" class="desktop" id="mysql" alt="mysql">
-            <img src="./assets/images/php.png" class="desktop" id="php" alt="php">
-            <img src="./assets/images/JS.png" class="desktop" id="js" alt="js">
-            <img src="./assets/images/yii.png" class="desktop" id="yii" alt="yii">
-            <img src="./assets/images/html.png" class="desktop" id="html" alt="html">
-            <img src="./assets/images/CSS.png" class="desktop" id="css" alt="css"> -->
+            <?php
+
+            if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) || isset($_POST['note'])) {
+                // Переменные с формы
+                $first_name = $_POST['first_name'];
+                $last_name = $_POST['last_name'];
+                $email = $_POST['email'];
+                $note = $_POST['note'];
+
+                // Параметры для подключения
+                $db_host = "localhost";
+                $db_user = "root"; // Логин БД
+                $db_password = ""; // Пароль БД
+                $db_base = 'altshu_final_project'; // Имя БД
+                $db_table = "users"; // Имя Таблицы БД
+
+                try {
+                    // Подключение к базе данных
+                    $db = new PDO("mysql:host=$db_host;dbname=$db_base", $db_user, $db_password);
+                    // Устанавливаем корректную кодировку
+                    $db->exec("set names utf8");
+                    // Собираем данные для запроса
+                    $data = array('first_name' => $first_name, 'last_name' => $last_name, 'email' => $email, 'note' => $note);
+                    // Подготавливаем SQL-запрос
+                    $query = $db->prepare("INSERT INTO $db_table (first_name, last_name, email, note) values (:first_name, :last_name, :email, :note)");
+                    // Выполняем запрос с данными
+                    $query->execute($data);
+                    // Запишим в переменую, что запрос отрабтал
+                    $result = true;
+                } catch (PDOException $e) {
+                    // Если есть ошибка соединения или выполнения запроса, выводим её
+                    print "Ошибка!: " . $e->getMessage() .
+                        "<br/>";
+                }
+
+                if ($result) {
+                    // echo "Успех. Информация занесена в базу данных";
+                }
+            }
+            ?>
+            <img class="headerimg" src="./assets/images/photo.webp">
+
         </section>
 
     </header>
@@ -159,18 +195,8 @@
             <article id="first">
                 <h3> Bringing great results for every client. </h3>
                 <div class="work1">
+                    <img src="./assets/images/fotoFarmer.jpg" class="imgWork">
                 </div>
-                Вариант №1 <br>
-                <div class="work2">
-                </div>
-                Вариант №2 <br>
-                <div class="work3">
-                </div>
-                Вариант №3 <br>
-                <br>
-                <button class="projects">
-                    view all <br> projects
-                </button>
             </article>
         </section>
 
@@ -191,30 +217,28 @@
 
             </article>
         </section>
+
         <section class="design">
             <article id="third">
-                <h3> Дизайн и технологии</h3>
-                <div class="blog1">
-                </div> Вариант №1 <br>
-                <div class="blog2">
-                </div> Вариант №2 <br>
-                <div class="blog3">
-                </div> Вариант №3 <br>
+                <section class="aboutMe">
+                    <?php
+                    echo '<a href="/mysaitPHP/aboutme.php">Как  я стала разработчиком</a>';
+                    ?>
+                </section>
+                <section class="aboutMe">
+                    <?php
+                    echo '<a href="/mysaitPHP/design.php">Дизайн в разработке сайтов</a>';
+                    ?>
+                </section>
+                <section class="aboutMe">
+                    <?php
+                    echo '<a href="/mysaitPHP/websait.php">Разновидности мобильных приложений</a>';
+                    ?>
+                </section>
+
             </article>
         </section>
-        <section class="desktop" class="coffee">
-            <article class="coffee1-1">
-                <p> Work <br>
-                    Favorite projects, award-winning campaigns and more. <br>
-                    View all
-                </p>
-            </article>
-            <article class="coffee1-2">
-                <p>About <br>
-                    My journey, career highlights and everything else you need to know. <br>
-                    Get to know me </p>
-            </article>
-        </section>
+
     </main>
     <footer>
         <section class="footer" id="four">
@@ -226,7 +250,7 @@
             </ul>
         </section>
     </footer>
-    <!-- <script src="./assets/scripts/script.js"></script> -->
+
 
 </body>
 

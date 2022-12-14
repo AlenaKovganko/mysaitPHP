@@ -1,7 +1,7 @@
 .modalwin {
 
-    height: 500px;
-    width: 500px;
+    height: 50vw;
+    width: 50vw;
     border: 3px outset gray;
     /* background: yellow; */
     background-image: url(depositphotos_12284741-stock-photo-old-wood.jpg);
@@ -83,7 +83,7 @@ textarea {
 button {
     margin-top: 10px;
     margin-left: 30px;
-    width: 7vw;
+    width: 8vw;
     height: 3vw;
     border-radius: 5px;
     cursor: pointer;
@@ -92,6 +92,52 @@ button {
 }
 
 @media screen and (max-width: 600px) {
+    .modalwin {
+
+        height: 120vw;
+        width: 80vw;
+        border: 3px outset gray;
+        background-image: url('depositphotos_12284741-stock-photo-old-wood.jpg');
+        top: 10%;
+        /* отступ сверху */
+        right: 0;
+        left: 0;
+        font-size: 14px;
+        margin: 0 auto;
+        z-index: 2;
+        /* поверх всех */
+        display: none;
+        /* сначала невидим */
+        position: fixed;
+        /* фиксированное позиционирование, окно стабильно при прокрутке */
+        border: 1px solid #383838;
+    }
+
+    button {
+        margin-top: 5px;
+        margin-left: 30px;
+        width: 20vw;
+        height: 10vw;
+        border-radius: 5px;
+        border: 1px solid #753939;
+        box-shadow: 2px 2px 2px #753939;
+
+    }
+
+    textarea {
+        width: 60vw;
+        margin-top: 5px;
+        margin-left: 30px;
+        resize: vertical;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #753939;
+        box-shadow: 2px 2px 2px #753939;
+        height: 150px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
     .modalwin {
 
         height: 120vw;

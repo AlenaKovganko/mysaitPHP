@@ -1,0 +1,242 @@
+* {
+    font-family: Nunito;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav {
+    height: 83px;
+    width: 100vw;
+    background: #6C85AC;
+    color: #ffffff;
+}
+
+
+.list {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    height: 83px;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.list li {
+    list-style-type: none;
+    margin: 5vw;
+    color: #ffffff;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+
+}
+
+@media screen and (max-width: 600px) {
+    .nav {
+        height: 8vh;
+    }
+
+
+    .list li {
+        font-size: 1rem;
+        margin: 1.2rem;
+
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+    .nav {
+        height: 8vh;
+    }
+
+
+    .list li {
+        font-size: 1rem;
+        margin: 5vw;
+        background: #6C85AC;
+    }
+}
+
+
+.header {
+
+    height: 60vh;
+    width: 100vw;
+    background: linear-gradient(180deg, #6C85AC 0%, rgba(108, 133, 172, 0) 100%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.header h1 {
+    margin-top: 1vw;
+    margin-left: 100px;
+    padding-top: 26px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 3rem;
+    color: #FFFFFF;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header p {
+    margin-left: 100px;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.b_write_me {
+    margin-left: 100px;
+    margin-top: 0;
+    height: 5vh;
+    width: 18vw;
+    background: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 32px;
+
+}
+
+.b_write_me:hover {
+
+    margin-left: 100px;
+    margin-top: 0;
+    height: 5vh;
+    width: 18vw;
+    background: #C0C7D3;
+    border: 2px solid #FFFFFF;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 32px;
+}
+
+.b_write_me:active {
+    margin-left: 100px;
+    margin-top: 0;
+    height: 5vh;
+    width: 18vw;
+    background: #C0C7D3;
+    border: 2px solid #FFFFFF;
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 32px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .b_write_me,
+    .b_write_me:hover {
+        margin-top: 0.1rem;
+        margin-left: 10vw;
+        height: 3rem;
+        width: 10rem;
+    }
+
+
+    .b_write_me:active {
+        margin-top: 0.1rem;
+        margin-left: 10vw;
+        height: 3rem;
+        width: 10rem;
+        background: #C0C7D3;
+        border: 2px solid #FFFFFF;
+        box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 32px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+    .header {
+        height: 50vh;
+    }
+
+    .header h1 {
+        width: 70vw;
+        font-size: 2rem;
+        line-height: 2rem;
+
+    }
+
+    .header p {
+        width: 70vw;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+
+    }
+
+    .b_write_me,
+    .b_write_me:hover {
+        margin-top: 0.1rem;
+        height: 3rem;
+        width: 10rem;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .desktop {
+        display: none;
+    }
+
+    .header {
+        height: 65vh;
+
+    }
+
+    .header h1 {
+        padding-left: 0.1rem;
+        padding-left: 0.1rem;
+        font-style: normal;
+        font-weight: 10rem;
+        font-size: 2em;
+        line-height: 1em;
+        color: #FFFFFF;
+        margin-left: 10vw;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .header p {
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+        margin-left: 10vw;
+    }
+
+}
+
+
+.headerimg {
+    position: absolute;
+    margin-left: 65vw;
+    margin-top: 90px;
+    width: 26vw;
+    
+    
+
+}
+.headerimg:hover {
+    transform: scale(1.02); /* Увеличиваем масштаб */
+    transition: 1.5c;
+    border: 2px rgb(58, 41, 119) solid;
+   }
+
+
+
+@media screen and (max-width: 1000px) {
+    .headerimg {
+        display: none;
+
+    }
+}
